@@ -1,0 +1,11 @@
+# Ignore Vagrant box
+.vagrant/
+settings.php
+
+# Exclude hidden OS files.
+.DS_Store
+._*
+Thumbs.db
+
+# Local files
+.idea
