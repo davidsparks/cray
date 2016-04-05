@@ -1,0 +1,61 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "217fa893b0314b1e82ad77d23b01e661",
+    "content-hash": "7fe93ed010796a5e07e57617ca1d5f47",
+    "packages": [
+        {
+            "name": "drupal/features",
+            "version": "dev-7.x-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/features",
+                "reference": "c717abb73025ac6e39eae3410f42c2444d752231"
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.drupal-composer.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "Provides feature management for Drupal.",
+            "homepage": "https://www.drupal.org/project/features",
+            "time": "2016-03-28 14:59:40"
+        },
+        {
+            "name": "pantheon-systems/drops-7",
+            "version": "7.43",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pantheon-systems/drops-7.git",
+                "reference": "master"
+            },
+            "replace": {
+                "drupal/drupal": "self.version",
+                "drupal/field": "self.version",
+                "drupal/file": "self.version",
+                "drupal/path": "self.version",
+                "drupal/system": "self.version"
+            },
+            "type": "drupal-core"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

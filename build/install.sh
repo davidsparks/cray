@@ -9,8 +9,8 @@ drush="drush $drush_flags -y -r $base/www"
 chmod -R +w $base/www/sites/default
 chmod -R +w $base/cnf
 
-echo "Symlink settings.php into our Drupal."
+echo "Symlink settings.php into Drupal directory"
 ln -sf $base/cnf/settings.php $base/www/sites/default/
-echo "Installing Drupal like a boss."
+echo "Installing Drupal"
 $drush si --site-name=cray --account-pass=admin
 

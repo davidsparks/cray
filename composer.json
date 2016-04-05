@@ -1,0 +1,35 @@
+{
+    "name": "root/vagrant",
+    "type": "project",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.drupal-composer.org/"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "pantheon-systems/drops-7",
+                "type": "drupal-core",
+                "version": "7.43",
+                "source": {
+                    "url": "https://github.com/pantheon-systems/drops-7.git",
+                    "type": "git",
+                    "reference": "master"
+                },
+                "replace": {
+                    "drupal/drupal": "self.version",
+                    "drupal/field": "self.version",
+                    "drupal/file": "self.version",
+                    "drupal/system": "self.version",
+                    "drupal/path": "self.version"
+                }
+            }
+        }
+    ],
+    "require": {
+        "pantheon-systems/drops-7": "7.43",
+        "drupal/features": "~7.2"
+    }
+}

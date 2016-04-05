@@ -55,10 +55,29 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./", "/vagrant", type: "nfs"
     
     config.vm.provision :shell, inline: <<SCRIPT
+
+    # Add custom .bashrc lines
+    if [[ -f /vagrant/cnf/.bashrc ]]; then
+      cat /vagrant/cnf/.bashrc >> ~/.bashrc
+    fi
+
+    # Custom .vimrc and colors
+    if [[ -f /vagrant/cnf/.vimrc ]]; then
+      cp /vagrant/cnf/.vimrc ~
+      if [[ ! -d ~/.vim/colors ]]; then
+        mkdir -p ~/.vim/colors
+      fi
+      cp /vagrant/cnf/hybrid.vim ~/.vim/colors
+    fi
+
+    # Apply local Drupal settings
     if [[ ! -f /vagrant/cnf/settings.php ]]; then
       cp /vagrant/cnf/local.settings.php /vagrant/cnf/settings.php
     fi
+
+    # Run the Drupal install script
     su vagrant -c 'cd /vagrant && build/install.sh;'
+
 SCRIPT
 
 
