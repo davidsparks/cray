@@ -75,8 +75,8 @@ Vagrant.configure("2") do |config|
       cp /vagrant/cnf/local.settings.php /vagrant/cnf/settings.php
     fi
 
-    # Run the Drupal install script
-    su vagrant -c 'cd /vagrant && build/install.sh;'
+    # Composer install, run the Drupal install scripts
+    su vagrant -c 'cd /vagrant && composer install && build/install.sh;'
 
 SCRIPT
 
