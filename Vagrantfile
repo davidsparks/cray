@@ -58,20 +58,23 @@ Vagrant.configure("2") do |config|
 
     # Add custom .bashrc lines
     if [[ -f /vagrant/cnf/.bashrc ]]; then
-      cat /vagrant/cnf/.bashrc >> ~/.bashrc
+      echo "Adding custom .bashrc lines"
+      cat /vagrant/cnf/.bashrc >> /home/vagrant/.bashrc
     fi
 
     # Custom .vimrc and colors
     if [[ -f /vagrant/cnf/.vimrc ]]; then
-      cp /vagrant/cnf/.vimrc ~
-      if [[ ! -d ~/.vim/colors ]]; then
-        mkdir -p ~/.vim/colors
+      echo "Adding custom .vimrc and colors"
+      cp /vagrant/cnf/.vimrc /home/vagrant
+      if [[ ! -d /home/vagrant/.vim/colors ]]; then
+        mkdir -p /home/vagrant/.vim/colors
       fi
-      cp /vagrant/cnf/hybrid.vim ~/.vim/colors
+      cp /vagrant/cnf/hybrid.vim /home/vagrant/.vim/colors
     fi
 
     # Apply local Drupal settings
     if [[ ! -f /vagrant/cnf/settings.php ]]; then
+      echo "Applying local Drupal settings"
       cp /vagrant/cnf/local.settings.php /vagrant/cnf/settings.php
     fi
 
