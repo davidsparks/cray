@@ -31,7 +31,9 @@
     "require": {
         "pantheon-systems/drops-7": "7.43",
         "drupal/features": "~7.2",
-        "craychee/rootcanal": "dev-master",
+        "craychee/rootcanal": "dev-master"
+    },
+    "require-dev": {
         "drush/drush": "7.*",
         "drupal/drupal-extension": "~3.0"
     },

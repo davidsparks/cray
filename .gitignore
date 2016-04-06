@@ -7,9 +7,11 @@ settings.php
 ._*
 Thumbs.db
 
-# Local files
+# IDE files
 .idea
 
-/vendor/
-/www/
-/bin/
+# Ignore artifacts of Drupal build.
+bin
+!bin/deploy
+vendor
+www
