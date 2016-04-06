@@ -12,7 +12,7 @@ if [[ -f /vagrant/cnf/.vimrc ]]; then
   echo "Adding custom .vimrc and colors"
   cp /vagrant/cnf/.vimrc /home/vagrant
   if [[ ! -d /home/vagrant/.vim/colors ]]; then
-    su vagrant -c 'mkdir -p /home/vagrant/.vim/colors'
+    mkdir -p /home/vagrant/.vim/colors
   fi
   cp /vagrant/cnf/hybrid.vim /home/vagrant/.vim/colors
   chown vagrant:vagrant /home/vagrant/.vimrc

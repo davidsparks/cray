@@ -27,6 +27,6 @@ alias gp='git pull'
 
 function cs() { cd $1; d; }
 
-function parse_git_branch_and_add_brackets {
+function parse_git_branch_and_add_brackets() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
 }
