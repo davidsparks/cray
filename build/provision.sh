@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Add custom .bashrc lines
+# Custom .bashrc
 if [[ -f /vagrant/cnf/.bashrc ]]; then
-  echo "Adding custom .bashrc lines"
-  cat /vagrant/cnf/.bashrc >> /home/vagrant/.bashrc
+  echo "Adding custom .bashrc"
+  cp /vagrant/cnf/.bashrc /home/vagrant
   chown vagrant:vagrant /home/vagrant/.bashrc
 fi
 
