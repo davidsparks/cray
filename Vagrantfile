@@ -25,10 +25,10 @@ end
 Vagrant.configure("2") do |config|
 
     config.vm.provider :virtualbox do |v|
-        v.name = "cray"
+        v.name = "cray3"
         v.customize [
             "modifyvm", :id,
-            "--name", "cray",
+            "--name", "cray3",
             "--memory", 2048,
             "--natdnshostresolver1", "on",
             "--cpus", 1,
@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.box = "ubuntu/trusty64"
     
-    config.vm.network :private_network, ip: "192.168.33.99"
+    config.vm.network :private_network, ip: "192.168.33.33"
     config.ssh.forward_agent = true
 
     # If ansible is in your path it will provision from your HOST machine
